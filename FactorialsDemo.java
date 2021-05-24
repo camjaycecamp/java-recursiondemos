@@ -26,7 +26,7 @@ public class FactorialsDemo
 	    }
 	    
 	    System.out.println("Do you want your answer computed using a loop or recursion?"
-	    		+ "\n ype '1' for a loop and '2' for recursion.");
+	    		+ "\n type '1' for a loop and '2' for recursion.");
 	    int method = s.nextInt();
 	    
 	    if (method == 1) 
