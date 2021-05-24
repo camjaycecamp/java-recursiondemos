@@ -2,7 +2,7 @@
  * cameron campbell
  * advanced java
  * occc spring 2021
- * Big Integer Factorials Demo
+ * big integer factorials demo
  */
 
 import java.util.Scanner;
@@ -10,7 +10,12 @@ import java.math.BigInteger;
 
 public class BigIntegerFactorialsDemo
 {
-	
+	/*
+	 * practically everything in this program is identical to the FactorialsDemo program.
+	 * the only major difference is that the values handled are all replaced with BigInt
+	 * values, allowing the program to calculate to MUCH higher factorials for both looping
+	 * and recursion.
+	 */
 	public static void main (String [] args)
 	{
 		Scanner s = new Scanner(System.in);
