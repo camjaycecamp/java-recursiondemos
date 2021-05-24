@@ -2,32 +2,31 @@
  * cameron campbell
  * advanced java
  * occc spring 2021
- * Big Integer Factorials Demo
+ * Factorials Demo
  */
 
 import java.util.Scanner;
-import java.math.BigInteger;
 
-public class BigIntegerFactorialsDemo
+public class FactorialsDemo 
 {
 	
 	public static void main (String [] args)
 	{
-		Scanner s = new Scanner(System.in);
-		BigInteger val = new BigInteger("0");
-		
+	    long val = 0;
+	    Scanner s = new Scanner(System.in);
+	    
 	    if ( args.length == 1 )
 	    {
-	    	val = new BigInteger(args[0]);
+	       val = Integer.parseInt(args[0]);
 	    }
 	    else
 	    {
 	       System.out.print("Please enter value: ");
-	       val = new BigInteger(s.nextLine());
+	       val = s.nextInt();
 	    }
 	    
 	    System.out.println("Do you want your answer computed using a loop or recursion?"
-	    		+ "\n Type '1' for a loop and '2' for recursion.");
+	    		+ "\n ype '1' for a loop and '2' for recursion.");
 	    int method = s.nextInt();
 	    
 	    if (method == 1) 
@@ -46,28 +45,25 @@ public class BigIntegerFactorialsDemo
 	    }
 	  }
 
-	public static BigInteger Factorial_Loop(BigInteger n)
+	public static long Factorial_Loop(long n)
 	{
-	    BigInteger result = new BigInteger("1");
-	    
-	    if (n.longValue() > 1)
+	    long result = 1;
+	    if (n > 1)
 	    {
-	      for(int i = 1; i <= n.longValue(); i++)
+	      for(int i = 1; i <= n; i++)
 	      {
-	    	 BigInteger b = new BigInteger(String.valueOf(i));
-	         result = result.multiply(b);
+	         result *= i;
 	      }
 	    }
 	    return result;
 	  }
 	
-	public static BigInteger Factorial_Recursive(BigInteger n)
+	public static long Factorial_Recursive(long n)
 	 {
-		  	BigInteger result = new BigInteger("1");
-		    if (n.longValue() > 1)
+		    long result = 1;
+		    if (n > 1)
 		    {
-		    	BigInteger b = new BigInteger("1");
-		    	result = n.multiply(Factorial_Recursive(n.subtract(b)));
+		      result = n * Factorial_Recursive(n-1);
 		    }
 		    return result;
 	 }
